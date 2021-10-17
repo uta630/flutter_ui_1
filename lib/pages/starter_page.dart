@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_1/pages/home_page.dart';
 
 class StarterPage extends StatefulWidget {
   const StarterPage({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _StarterPageState extends State<StarterPage> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/cheers-picjumbo-com.jpg'),
+            image: AssetImage('assets/images/AppBG.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -45,7 +46,7 @@ class _StarterPageState extends State<StarterPage> {
                 ),
                 const SizedBox(height: 20),
                 const Text(
-                  "さまざまな料理をご用意しています。\n是非お楽しみください",
+                  "さまざまな料理をご用意しています。\n是非お楽しみください。",
                   style: TextStyle(
                     color: Colors.white,
                     height: 1.4,
@@ -63,10 +64,19 @@ class _StarterPageState extends State<StarterPage> {
                       ],
                     ),
                   ),
-                  child: const MaterialButton(
+                  child: MaterialButton(
                     minWidth: double.infinity,
-                    onPressed: null,
-                    child: Text(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<bool>(
+                          builder: (BuildContext context) {
+                            return const HomePage();
+                          },
+                        ),
+                      );
+                    },
+                    child: const Text(
                       "Start",
                       style: TextStyle(
                         color: Colors.white,
@@ -77,7 +87,7 @@ class _StarterPageState extends State<StarterPage> {
                 const SizedBox(height: 30),
                 const Align(
                   child: Text(
-                    "来月１日より随時お届けします。",
+                    "来月１日より随時お届けします",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
